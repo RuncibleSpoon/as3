@@ -31,6 +31,12 @@
                              "serverAddresses": [
                                  "10.138.0.3"
                              ]
+                         },
+			 {
+                             "servicePort": 8081,
+                             "serverAddresses": [
+                                 "10.138.0.3"
+                             ]
                          }
                      ]
                  }
