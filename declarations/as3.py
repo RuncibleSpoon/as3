@@ -8,8 +8,11 @@ from requests.auth import HTTPBasicAuth
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
+
+#Set up our url for the as3 declaration 
+AS3BASE = 'https://raw.githubusercontent.com/RuncibleSpoon/as3/master/declarations/'
 # Declaration location
-GITDRC = 'https://raw.githubusercontent.com/RuncibleSpoon/as3/master/declarations/payload.json'
+DECLARATION = AS3BASE + os.environ['DECLARATION']
 IP = 'bigip.example.com'
 #IP = '10.1.10.89'
 PORT = '8443'
@@ -20,7 +23,7 @@ TESTPATH = '/mgmt/shared/appsvcs/info'
 AS3PATH = '/mgmt/shared/appsvcs/declare'
 
 print("########### Fetching Declaration ###########")
-d = requests.get(GITDRC)
+d = requests.get(DECLARATION)
 
 # Check we have connectivity and AS3 is installed
 print('########### Checking that AS3 is running on ', IP ,' #########')
