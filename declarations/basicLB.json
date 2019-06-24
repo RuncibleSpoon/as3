@@ -29,15 +29,10 @@
                          {
                              "servicePort": 8080,
                              "serverAddresses": [
-                                 "10.138.0.3"
-                             ]
-                         },
-			 {
-                             "servicePort": 8081,
-                             "serverAddresses": [
-                                 "10.138.0.3"
+                                 "10.1.10.100"
                              ]
                          }
+			 
                      ]
                  }
              }
