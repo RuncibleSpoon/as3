@@ -3,18 +3,27 @@
 import requests
 import os
 from requests.auth import HTTPBasicAuth
+import argparse
+
 
 # Get rid of annoying insecure requests waring
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
+# parse the arguement
+
+parser = argparse.ArgumentParser()
+parser.add_argument("declaration", help="The name of the declaration you want to send")
+args = parser.parse_args()
+
+
 
 #Set up our url for the as3 declaration 
 AS3BASE = 'https://raw.githubusercontent.com/RuncibleSpoon/as3/master/declarations/'
 # Declaration location
-DECLARATION = AS3BASE + os.environ['DECLARATION']
+#DECLARATION = AS3BASE + os.environ['DECLARATION']
+DECLARATION = AS3BASE + declaration
 IP = 'bigip.example.com'
-#IP = '10.1.10.89'
 PORT = '8443'
 USER = 'admin'
 PASS = os.environ['BIGPASS']
