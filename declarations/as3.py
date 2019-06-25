@@ -22,7 +22,7 @@ args = parser.parse_args()
 AS3BASE = 'https://raw.githubusercontent.com/RuncibleSpoon/as3/master/declarations/'
 # Declaration location
 #DECLARATION = AS3BASE + os.environ['DECLARATION']
-DECLARATION = AS3BASE + declaration
+DECLARATION = AS3BASE + args.declaration
 IP = 'bigip.example.com'
 PORT = '8443'
 USER = 'admin'
