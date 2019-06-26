@@ -30,6 +30,7 @@
                       "siteDomains": ["www.google.com"],
                       "externalDomains": ["www.yahoo.com"],
                       "urlWhitelist": ["www.bing.com"]
+                  }
                     },
                  "web_pool": {
                      "class": "Pool",
