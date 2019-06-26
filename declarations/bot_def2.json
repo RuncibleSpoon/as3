@@ -25,12 +25,8 @@
                       "mode": "always",
                       "blockSuspiscousBrowsers": true,
                       "issueCaptchaChallenge": true,
-                      "gracePeriod": 50,
-                      "crossDomainRequests": "validate-bulk",
-                      "siteDomains": ["www.google.com"],
-                      "externalDomains": ["www.yahoo.com"],
-                      "urlWhitelist": ["www.bing.com"]
-                  }
+                      "gracePeriod": 50
+                                     }
                     },
                  "web_pool": {
                      "class": "Pool",
