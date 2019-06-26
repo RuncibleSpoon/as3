@@ -20,7 +20,7 @@
                      "pool": "web_pool"
                  },
                  "DOS_Profile": {
-                   "class": "DOS_Profile",
+                   "class": "DOS_Profile_Application_Bot_Defense",
                    "botDefense": {
                       "mode": "always",
                       "blockSuspiscousBrowsers": true,
