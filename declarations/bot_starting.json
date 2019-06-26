@@ -7,7 +7,7 @@
       "trace": true,
       "logLevel": "debug"
     },
-    "Sample_dos_01": {
+    "Sample_01": {
       "class": "Tenant",
       "Application": {
         "class": "Application",
@@ -15,33 +15,18 @@
         "DOS_Profile": {
           "class": "DOS_Profile",
           "application": {
-            "blacklistedGeolocations": ["Timor-Leste", "Cocos (Keeling) Islands"],
-            "whitelistedGeolocations": ["Bonaire, Saint Eustatius and Saba", "Cote D'Ivoire"],
-            "captchaResponse": {
+              "captchaResponse": {
               "first": "Are you a robot&quest;<br><br>%DOSL7.captcha.image% %DOSL7.captcha.change%<br><b>What code is in the image&quest;</b>%DOSL7.captcha.solution%<br>%DOSL7.captcha.submit%<br><br>Your supportID is: %DOSL7.captcha.support_id%.",
               "failure": "Error!<br><br>%DOSL7.captcha.image% %DOSL7.captcha.change%<br><b>What code is in the image&quest;</b>%DOSL7.captcha.solution%<br>%DOSL7.captcha.submit%<br><br>Your support ID is: %DOSL7.captcha.support_id%."
             },
-            "heavyURLProtection": {
-              "automaticDetectionEnabled": true,
-              "detectionThreshold": 16,
-              "excludeList": ["example.com"],
-              "protectList": [{
-                  "url": "www.google.com",
-                  "threshold": 0
-                }
-              ]
-            },
-            "triggerIRule": true,
-            "scrubbingDuration": 42,
-            "remoteTriggeredBlackHoleDuration": 10,
             "profileAcceleration": {
               "bigip": "/Common/full-acceleration"
             },
             "botDefense": {
-              "mode": "during-attacks",
+              "mode": "always",
               "blockSuspiscousBrowsers": true,
               "issueCaptchaChallenge": true,
-              "gracePeriod": 4000,
+              "gracePeriod": 50,
               "crossDomainRequests": "validate-bulk",
               "siteDomains": ["www.google.com"],
               "externalDomains": ["www.yahoo.com"],
@@ -187,78 +172,12 @@
               "recordTrafficEnabled": false,
               "repetitionInterval": 10
             }
-          },
-          "network": {
-            "dynamicSignatures": {
-              "detectionMode": "enabled",
-              "mitigationMode": "medium",
-              "scrubbingEnabled": true,
-              "scrubbingCategory": {
-                "bigip": "/Common/botnets"
-              },
-              "scrubbingDuration": 60
-            },
-            "vectors": [{
-                "type": "hop-cnt-low",
-                "state": "learn-only",
-                "thresholdMode": "manual",
-                "rateThreshold": 40000,
-                "rateIncreaseThreshold": 600,
-                "rateLimit": 1000000,
-                "simulateAutoThresholdEnabled": true,
-                "badActorSettings": {
-                  "enabled": true,
-                  "sourceDetectionThreshold": 0,
-                  "sourceMitigationThreshold": 0
-                },
-                "autoBlacklistSettings": {
-                  "enabled": true,
-                  "category": {
-                    "bigip": "/Common/botnets"
-                  },
-                  "attackDetectionTime": 1,
-                  "categoryDuration": 60,
-                  "externalAdvertisementEnabled": true
-                }
-              }
-            ]
-          },
-          "protocolDNS": {
-            "vectors": [{
-                "type": "ptr",
-                "state": "mitigate",
-                "thresholdMode": "fully-automatic",
-                "autoAttackFloor": 0,
-                "autoAttackCeiling": 0
-              }
-            ]
-          },
-          "protocolSIP": {
-            "vectors": [{
-                "type": "cancel",
-                "state": "disabled",
-                "thresholdMode": "fully-automatic",
-                "autoAttackFloor": 4294967295,
-                "autoAttackCeiling": 4294967295,
-                "rateIncreaseThreshold": 4294967295
-              }
-            ]
-          },
-          "whitelist": {
-            "use": "addressList"
-          },
-          "applicationWhitelist": {
-            "use": "addressListHTTP"
-          }
-        },
-        "addressList": {
-          "class": "Firewall_Address_List",
-          "addresses": ["10.0.0.10"]
-        },
-        "addressListHTTP": {
-          "class": "Firewall_Address_List",
-          "addresses": ["10.0.0.11"]
-        }
+              
+          
+          
+        
+        
+        
       }
     }
   }
