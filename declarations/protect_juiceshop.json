@@ -76,10 +76,7 @@
                             "POLL",
                             "POST"
                         ],
-                        "requestContains": {
-                            "searchIn": "search-in-headers",
-                            "value": "The header string to search for"
-                        },
+                        
                         "loginResults": [
                             "login-result-successful",
                             "login-result-failed"
