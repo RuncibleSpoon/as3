@@ -67,7 +67,8 @@
                         ],
                         "protocols": [
                             "https",
-                            "ws"
+                            "ws",
+                            "http"
                         ],
                         "httpMethods": [
                             "ACL",
