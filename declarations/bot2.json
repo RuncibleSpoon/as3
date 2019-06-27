@@ -35,10 +35,8 @@
                 "botDefenseProfile": {
                     "class": "DOS_Profile",
                     "application": {
-                        "scrubbingDuration": 5000,
-                        "remoteTriggeredBlackHoleDuration": 5000,
-                        "botDefense": {
-                            "mode": "during-attacks",
+                            "botDefense": {
+                            "mode": "always",
                             "blockSuspiscousBrowsers": true,
                             "issueCaptchaChallenge": true,
                             "gracePeriod": 4000,
