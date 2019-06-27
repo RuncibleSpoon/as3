@@ -4,6 +4,7 @@
     "action": "deploy",
     "persist": true,
      "declaration": {
+        "class": "ADC",
         "Sample_01": {
             "class": "Tenant",
             "A1": {
