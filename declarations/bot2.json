@@ -40,7 +40,7 @@
                     "class": "DOS_Profile",
                     "application": {
                             "botDefense": {
-                            "mode": "Always",
+                            "mode": "always",
                             "blockSuspiscousBrowsers": true,
                             "issueCaptchaChallenge": true,
                             "gracePeriod": 40,
