@@ -40,7 +40,7 @@
                      ]
                  },
 
-                 "My_ASM_Policy": {
+                 "JuiceShopASM": {
                     "class": "WAF_Policy",
                     "url": "https://raw.githubusercontent.com/RuncibleSpoon/as3/master/app_security/asm-policy-linux-medium.xml",
                     "ignoreChanges": true
