@@ -40,10 +40,10 @@
                     "class": "DOS_Profile",
                     "application": {
                             "botDefense": {
-                            "mode": "during-attacks",
+                            "mode": "Always",
                             "blockSuspiscousBrowsers": true,
                             "issueCaptchaChallenge": true,
-                            "gracePeriod": 4000,
+                            "gracePeriod": 40,
                             "crossDomainRequests": "validate-bulk",
                             "siteDomains": [
                                 "www.google.com"
