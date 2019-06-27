@@ -15,7 +15,7 @@
                 "template": "http",
                 "serviceMain": {
                     "class": "Service_HTTP",
-                    "virtualAddresses": ["192.0.2.0"],
+                    "virtualAddresses": ["10.1.10.50"],
                     "pool": "web_pool",
                     "profileDOS": {
                         "use": "botDefenseProfile"
