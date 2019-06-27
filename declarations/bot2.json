@@ -1,69 +1,73 @@
 {
     "class": "ADC",
     "schemaVersion": "3.12.0",
-    "Tenant": {
-        "class": "Tenant",
-        "A1": {
-            "class": "Application",
-            "template": "http",
-            "serviceMain": {
-                "class": "Service_HTTP",
-                "virtualAddresses": ["192.0.2.0"],
-                "pool": "web_pool",
-                "profileDOS": {
-                    "use": "botDefenseProfile"
-                }
-            },
-            "web_pool": {
-                     "class": "Pool",
-                     "monitors": [
-                         "http"
-                     ],
-                     "members": [
-                         {
-                             "servicePort": 8080,
-                             "serverAddresses": [
-                                 "10.1.10.100"
-                             ]
-                         }
-             
-                     ]
-                 },
-            "botDefenseProfile": {
-                "class": "DOS_Profile",
-                "application": {
-                    "scrubbingDuration": 5000,
-                    "remoteTriggeredBlackHoleDuration": 5000,
-                    "botDefense": {
-                        "mode": "during-attacks",
-                        "blockSuspiscousBrowsers": true,
-                        "issueCaptchaChallenge": true,
-                        "gracePeriod": 4000,
-                        "crossDomainRequests": "validate-bulk",
-                        "siteDomains": [
-                            "www.google.com"
-                        ],
-                        "externalDomains": [
-                            "www.yahoo.com"
-                        ],
-                        "urlWhitelist": [
-                            "www.bing.com"
-                        ]
-                    },
-                    "botSignatures": {
-                        "checkingEnabled": true,
-                        "blockedCategories": [{
-                                "bigip": "/Common/Search Engine"
-                            }
-                        ],
-                        "reportedCategories": [{
-                                "bigip": "/Common/Crawler"
-                            }
-                        ]
+    "action": "deploy",
+     "persist": true,
+     "declaration": {
+        "Sample_01": {
+            "class": "Tenant",
+            "A1": {
+                "class": "Application",
+                "template": "http",
+                "serviceMain": {
+                    "class": "Service_HTTP",
+                    "virtualAddresses": ["192.0.2.0"],
+                    "pool": "web_pool",
+                    "profileDOS": {
+                        "use": "botDefenseProfile"
+                    }
+                },
+                "web_pool": {
+                         "class": "Pool",
+                         "monitors": [
+                             "http"
+                         ],
+                         "members": [
+                             {
+                                 "servicePort": 8080,
+                                 "serverAddresses": [
+                                     "10.1.10.100"
+                                 ]
+                             }
+                 
+                         ]
+                     },
+                "botDefenseProfile": {
+                    "class": "DOS_Profile",
+                    "application": {
+                        "scrubbingDuration": 5000,
+                        "remoteTriggeredBlackHoleDuration": 5000,
+                        "botDefense": {
+                            "mode": "during-attacks",
+                            "blockSuspiscousBrowsers": true,
+                            "issueCaptchaChallenge": true,
+                            "gracePeriod": 4000,
+                            "crossDomainRequests": "validate-bulk",
+                            "siteDomains": [
+                                "www.google.com"
+                            ],
+                            "externalDomains": [
+                                "www.yahoo.com"
+                            ],
+                            "urlWhitelist": [
+                                "www.bing.com"
+                            ]
+                        },
+                        "botSignatures": {
+                            "checkingEnabled": true,
+                            "blockedCategories": [{
+                                    "bigip": "/Common/Search Engine"
+                                }
+                            ],
+                            "reportedCategories": [{
+                                    "bigip": "/Common/Crawler"
+                                }
+                            ]
+                        }
                     }
                 }
             }
         }
     }
-}
+}    
 
