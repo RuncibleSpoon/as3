@@ -23,10 +23,13 @@
                      "policyWAF": {
                         "use": "JuiceShopASM"
                      },
-                     
-                     "securityLogProfiles": {
-                        "use": "secLogLocal"
-                     }
+
+                     "securityLogProfiles": [
+                        
+                        { "use": "secLogLocal"
+                        }
+                    
+                     ]
                  },
                  "juice_pool": {
                      "class": "Pool",
