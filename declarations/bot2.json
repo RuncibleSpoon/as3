@@ -2,7 +2,7 @@
     "class": "ADC",
     "schemaVersion": "3.12.0",
     "action": "deploy",
-     "persist": true,
+    "persist": true,
      "declaration": {
         "Sample_01": {
             "class": "Tenant",
@@ -35,11 +35,13 @@
                 "botDefenseProfile": {
                     "class": "DOS_Profile",
                     "application": {
-                            "botDefense": {
-                            "mode": "always",
+                        "scrubbingDuration": 5000,
+                        "remoteTriggeredBlackHoleDuration": 5000,
+                        "botDefense": {
+                            "mode": "during-attacks",
                             "blockSuspiscousBrowsers": true,
                             "issueCaptchaChallenge": true,
-                            "gracePeriod": 400,
+                            "gracePeriod": 4000,
                             "crossDomainRequests": "validate-bulk",
                             "siteDomains": [
                                 "www.google.com"
