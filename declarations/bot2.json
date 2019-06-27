@@ -3,7 +3,7 @@
     "schemaVersion": "3.12.0",
     "Tenant": {
         "class": "Tenant",
-        "Application": {
+        "A1": {
             "class": "Application",
             "template": "http",
             "serviceMain": {
