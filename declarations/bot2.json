@@ -39,7 +39,7 @@
                             "mode": "always",
                             "blockSuspiscousBrowsers": true,
                             "issueCaptchaChallenge": true,
-                            "gracePeriod": 4000,
+                            "gracePeriod": 400,
                             "crossDomainRequests": "validate-bulk",
                             "siteDomains": [
                                 "www.google.com"
